@@ -5,8 +5,14 @@ use App\User;
 use App\Permission\Model\Role;
 
 
-Route::get('/', function () {
+Route::get('/', function () { 
+    
     return view('welcome');
+});
+
+Route::get('/prueba', function () { 
+    
+    return view('prueba');
 });
 
 Auth::routes();
