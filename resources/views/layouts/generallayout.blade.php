@@ -1,125 +1,121 @@
 <!doctype html>
-
 <html lang="en">
   <head>
-
     <meta charset="utf-8"> 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Revista Científica Unimar</title>
     <link rel="icon" href="{{asset('img/unimar-logo.png')}}" type="image/png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
-    
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">  
   </head>
 
   <body>
     <div class=".container-xl">
-      <div class="header">
-        <div class="row">
-
-          <div class="col">
+      <!------------------------- navbar ------------------------->
+      <nav class="navbar navbar-expand-md sticky-top">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+          <span class="navbar-toggler-icon"><i class="fa fa-bars" aria-hidden="true" style="color:#e6e6ff"></i></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="collapse_target">     
+          <!------------------------- logo ------------------------->
+          <ul class="navbar-nav">
             <div class="logotipo">
-              <img src="{{asset('img/unimar-logo.png')}}" alt="logo" width="80px" height="auto">
+              <img src="{{asset('img/Fb-white.png')}}" alt="logo" width="60px" height="auto">
             </div>
-          </div>
-
-          <div class="col">
-            <ul id="iconos">
-              <!-- languaje icon -->
-              <li class="nav-item">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-globe fa-2x"></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">español</a>
-                    <a class="dropdown-item" href="#">ingles</a>
-                    <a class="dropdown-item" href="#">italiano</a>
-                  </div>
-                </div>     
-              </li>
-              <!-- login/singin icon -->
-              <li class="nav-item">
-                <div class="dropdown">
-                  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-user-circle fa-2x"></i>
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item">Iniciar Sesion</a>
-                    <a class="dropdown-item">Registrarse</a>
-                  </div>
-                </div>
-              </li>
-
-            </ul>
-          </div>
-
-        </div>
-      </div>
-
-      
-      <!-- navbar -->
-      <div class="topnav" id="myTopnav">
-                
-        <div class="dropdown">
-          <button class="dropbtn">Lineas de Investigación
-            <i class="fa fa-caret-down"></i>
-          </button>
-
-          <div class="dropdown-content">
-            <a href="#">administracion</a>
-            <a href="#">arte</a>
-            <a href="#">idiomas</a>
-            <a href="#">informatica</a>
-            <a href="#">derecho</a>
-            <a href="#">gerencia</a>
-            <a href="#">historia</a>
-            <a href="#">salud</a>
-          </div>
-        </div>
-
-        <a href="#">Autores</a>
-        <a href="#">Ediciones</a>
-        <a href="#">Informacion</a>
-                    
-        <!--search bar -->
-        <div class="search-container">
-          <form type="get" action=" # ">
-            <input type="text" name="query" placeholder="Search..">
-              <button type="submit">
-                <i class="fa fa-search"></i>
+          </ul>
+          <!------------------------- botones ------------------------->
+          <ul class="navbar-nav ml-auto">
+            <li class="navbar-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-target="dropdown_target" href="#">
+                Lineas de Investigación
+                <span class="caret" ></span>
+              </a>
+              <div class="dropdown-menu" id="lineas" arial-labelledby="dropdown_target">
+                <a class="dropdown-item">Administración</a>
+                <a class="dropdown-item">Arte</a>
+                <a class="dropdown-item">Idiomas</a>
+                <a class="dropdown-item">informatica</a>
+                <a class="dropdown-item">Derecho</a>
+                <a class="dropdown-item">Gerencia</a>
+                <a class="dropdown-item">Salud</a>
+                <a class="dropdown-item">Historia</a>
+                <a class="dropdown-item">Turismo</a>
+              </div>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="#">Autores</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="#">Ediciones</a>
+            </li>
+            <li class="navbar-item">
+              <a class="nav-link" href="#">Informacion</a>
+            </li>
+            <!------------------------- icono de busqueda ------------------------->
+            <li class="nav-item dropdown" id="icons">
+              <button class="btn dropdown-toggle" type="button" id="dropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-search fa-fw"></i>
               </button>
-          </form>    
+              <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownSearch">
+                <form class="px-4 py-3">
+                  <input class="input" type="text" placeholder="Search...">
+                  <button type="button" class="btn btn-success">Buscar</button>
+                </form>
+              </div>   
+            </li>
+            <!------------------------- icono de idiomas ------------------------->
+            <li class="nav-item dropdown" id="icons">
+              <button class="btn dropdown-toggle" type="button" id="dropdownLanguajeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fa fa-globe fa-fw"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownLanguajeButton">
+                <a class="dropdown-item" href="#">español</a>
+                <a class="dropdown-item" href="#">ingles</a>
+                <a class="dropdown-item" >italiano</a>
+              </div>   
+            </li>
+            <!------------------------- icono de usuario ------------------------->
+            <li class="nav-item dropdown" id="icons">
+              <button class="btn dropdown-toggle" type="button" id="dropdownsingin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user-circle fa-fw"></i>
+              </button>
+              <div class="dropdown-menu dropdown-menu-lg-right" aria-labelledby="dropdownsingin">
+                <a class="dropdown-item" href="#">
+                  Iniciar Sesion
+                  
+                </a>
+                
+                <a class="dropdown-item">Registrarse</a>
+              </div>
+            </li> 
+
+          </ul>
+
         </div>
 
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
-                    
-      </div>
-    </div>
-
-    <main>
-        @yield('content')
-    </main>
-    
-    <div class=".container-xl">
+      </nav>
+      <!------------------------- contenido ------------------------->
+      <main>
+          @yield('content')
+      </main>
+      
+    <!------------------------- footer ------------------------->
       <div class="footer">
         <div class="row">
-
-          <!-- unimar link -->
+          <!------------------------- logo de unimar ------------------------->
           <div class="col-sm">
             <div class="unimar-link">
               <a href="http://www.unimar.edu.ve/unimarportal/index.php">
-                <img src="{{ asset('img/white.png') }}" alt="logo blanco" width="190px" height="auto">
+                <img src="{{ asset('img/white.png') }}" alt="logo blanco" width="150px" height="auto">
               </a>
             </div>
           </div>
 
-          <!-- contact info -->
+          <!------------------------- informacion de contacto ------------------------->
           <div class="col-sm">
             <div class="info-contact">
               <p><b>Información de Contacto</p></b>
@@ -130,23 +126,23 @@
             </div>
           </div>
 
-          <!-- social media -->
+          <!------------------------- redes sociales ------------------------->
           <div class="col-sm">
             <ul id="social-media">
               <p><b>Redes Sociales</p></b>
-
+              <!------------------------- logo facebook ------------------------->
               <li class="nav-item">
                 <a href=#facebook>
                   <img src="{{ asset('img/fb-white.png') }}" alt="logo blanco" width="40px" height="auto">
                 </a>
               </li>
-
+              <!------------------------- logo twitter ------------------------->
               <li class="nav-item">
                 <a href=#twitter>
                   <img src="{{ asset('img/tw-white.png') }}" alt="logo blanco" width="40px" height="auto">
                 </a>
               </li>
-
+              <!------------------------- logo instagram ------------------------->
               <li class="nav-item">
                 <a href=#instagram>
                   <img src="{{ asset('img/ig-white.png') }}" alt="logo blanco" width="40px" height="auto">
@@ -154,23 +150,17 @@
               </li>
 
             </ul>
+
           </div>
+
         </div>
 
-    </div>
-        <script>
-            function myFunction() {
-                var x = document.getElementById("myTopnav");
-                if (x.className === "topnav") {
-                    x.className += " responsive";
-                } else {
-                    x.className = "topnav";
-                }
-            }
-        </script>
-
+      </div>
+    <!------------------------- scripts ------------------------->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" ></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   </body>
 
 </html>

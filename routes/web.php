@@ -10,9 +10,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/prueba', function () { 
+Route::get('/main', function () { 
     
-    return view('prueba');
+    return view('main');
+});
+
+Route::get('/articulo', function () { 
+    
+    return view('article');
+});
+Route::get('/autores', function () { 
+    
+    return view('authorsCatalog');
+});
+
+Route::get('/informacion', function () { 
+    
+    return view('info');
 });
 
 Auth::routes();
